@@ -28,7 +28,7 @@ public class B_AdminRestController {
 	private B_AdminDAO adminDAO;
 	private B_Admin admin;
 
-	@GetMapping("/Admin/{username}/{password}")
+	@GetMapping("/B_Admin/{username}/{password}")
 	public ResponseEntity getAgentById(@PathVariable("username") String username ,@PathVariable("password") String password) throws Exception {
 		boolean ad = adminDAO.login(username,password);
 		System.out.println(username+" "+password);
@@ -36,13 +36,14 @@ public class B_AdminRestController {
 
 	}
 	
-	@PutMapping("/put/Admin/{empId}")
+	@PutMapping("/put/B_Admin/{empId}")
 	public ResponseEntity updateAdmin(@PathVariable int empId,@RequestBody B_Admin admin){
 		
 		adminDAO.updateAdmin(empId,admin);
 		System.out.println("after updating");
 		return new ResponseEntity(empId,HttpStatus.OK);
 	}
+	
 	
 
 }

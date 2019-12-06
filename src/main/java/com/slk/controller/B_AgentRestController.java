@@ -29,14 +29,14 @@ public class B_AgentRestController {
 	private B_AgentDAO agentDAO;
 	private B_Agent agent;
 
-	@GetMapping("/Agent")
+	@GetMapping("/B_Agent")
 	public List list() throws Exception {
 		System.out.println("function inside agent rest");
 		System.out.println(agent+" all the data");
 		return agentDAO.list();
 	}
 
-	@GetMapping("/Agent/{agent_id}")
+	@GetMapping("/B_Agent/{agent_id}")
 	public ResponseEntity getAgentById(@PathVariable("agent_id") int agent_id) {
 
 		B_Agent ag1 = agentDAO.getAgentById(agent_id);
@@ -48,7 +48,7 @@ public class B_AgentRestController {
 		return new ResponseEntity(ag1, HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/post/Agent")
+	@PostMapping(value = "/post/B_Agent")
 	public ResponseEntity addAgent(@RequestBody B_Agent agent) {
 		System.out.println("funtion going to add ");
 		System.out.println(agent);
@@ -71,7 +71,7 @@ public class B_AgentRestController {
 
 	//}
 	
-	@DeleteMapping("/delete/Agent/{agent_id}")
+	@DeleteMapping("/delete/B_Agent/{agent_id}")
 	public ResponseEntity deleteAgent(@PathVariable int agent_id) throws SQLException {
 	// if (null == agentDAO.deleteAgent(agent)) {
 		// return new ResponseEntity("No Customer found for ID " + agent_id,
@@ -83,7 +83,7 @@ public class B_AgentRestController {
 
 	}
 
-	@PutMapping("/put/Agent/{agent_id}")
+	@PutMapping("/put/B_Agent/{agent_id}")
 	public ResponseEntity updateAgent(@PathVariable int agent_id, @RequestBody B_Agent agent) {
 		
 		// if (null == customer) {

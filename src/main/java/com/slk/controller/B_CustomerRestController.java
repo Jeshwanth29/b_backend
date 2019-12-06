@@ -25,7 +25,7 @@ public class B_CustomerRestController {
 	private B_CustomerDAO customerDAO;
 	// private Agent agent;
 	
-	@GetMapping("/Customer")
+	@GetMapping("/B_Customer")
 	public List getAllCustomers() throws Exception {
 		System.out.println("function inside customer rest");
 		return customerDAO.getAllCustomers();
