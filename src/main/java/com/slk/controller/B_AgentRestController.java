@@ -71,6 +71,8 @@ public class B_AgentRestController {
 
 	//}
 	
+	//chrome.exe --user-data-dir=C:/Users/slk/Desktop --disable-web-security
+	
 	@DeleteMapping("/delete/B_Agent/{agent_id}")
 	public ResponseEntity deleteAgent(@PathVariable int agent_id) throws SQLException {
 	// if (null == agentDAO.deleteAgent(agent)) {
